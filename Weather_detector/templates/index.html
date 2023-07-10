@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+</head>
+<body>
+    <div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="city" placeholder="Search..."/>
+            <input type="submit" name="button">
+        </form>
+        {% if data.country_code%}
+        <div>
+            <h1>coutry code: {{data.country_code}}</h1>
+            <h2>{{city}}</h2>
+            <h3>coordinate: {{data.coordinate}}</h3>
+            <h3>temp: {{data.temp}}</h3>
+            <h3>pressure: {{data.pressure}}</h3>
+            <h3>humidity: {{data.humidity}}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
